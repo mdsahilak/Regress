@@ -59,7 +59,7 @@
         
         <BR>
         
-        <div class="card bg-light text-dark mb-3 ml-4 mr-4">
+        <div class="card bg-light text-dark mb-3 ml-3 mr-3">
             <div class="card-body">
         <H3 class="card-title" ALIGN="CENTER"><FONT FACE="ARIAL">
             Input the Dataset

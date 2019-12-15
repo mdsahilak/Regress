@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title> Predict </title>
+        <script>
+            
+            function predict_X() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ans-space").innerHTML =
+                        this.responseText;
+                   }
+                };
+                var value = document.getElementById("prediction-input").value
+                
+                if(value==""){
+                    alert("Please enter a value");
+                } else {
+                    xhttp.open("GET", "/prediction/y/" + value, true);
+                    xhttp.send();
+                }
+            }
+        
+            function predict_Y() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ans-space").innerHTML =
+                        this.responseText;
+                   }
+                };
+                var value = document.getElementById("prediction-input").value
+                
+                if(value==""){
+                    alert("Please enter a value");
+                } else {
+                    xhttp.open("GET", "/prediction/x/" + value, true);
+                    xhttp.send();
+                    
+                }
+                
+            }
+            
+        </script>
+    </head>
+    
+    <body bgcolor="Black" text="white" align="center">
+        <FONT FACE="ARIAL">
+        <marquee>Jeet, bro please learn ajax!</marquee>
+        <HR WIDTH="95%" height="3" COLOR="RED">
+        <h1>
+            Model Metadata
+        </h1>
+        <h3>
+            #if(trainingRun == "success"){
+                Your Regressor Model has been trained
+            } else {
+                !Training Epoch aborted due to IO_Error. Please Inspect the input data!
+            }
+            <br>
+            view its summarised debug description below:
+            <br><br>
+            Errors: #(error)
+            <br><br>
+            The Regressor: #(regressor)
+            <br><br>
+            The Constants derived: #(constants)
+            <br><br>
+            The Regression Equations used: #(formulas)
+        </h3>
+        
+        <br>
+        <HR WIDTH="95%" height="3" COLOR="RED">
+        <br>
+        <h1>
+            Prediction Interface
+        </h1>
+        <h3> Input the value you would like to predict: </h3>
+        <p align="center">
+            <input type="text" width="500" name="t1" id="prediction-input">
+            <br>
+            <br>
+            <input type="button" name="b2" onclick="predict_Y()" value="Predict Y">
+            <input type="button" name="b1" onclick="predict_X()" value="Predict X">
+        </p>
+            <h1 align="center" id="ans-space">
+                None.
+            </h1>
+        <input type="button" name="re-t" onclick="window.location.href='/';" value="Re-Train">
+     </Font>
+    </body>
+</html>

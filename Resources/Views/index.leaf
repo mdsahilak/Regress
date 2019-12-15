@@ -1,0 +1,101 @@
+<html>
+    <head>
+            <title> Project X </title>
+            <Script>
+                function train_model() {
+                    var valueX = document.getElementById("text1").value
+                    var valueY = document.getElementById("text2").value
+                    
+                    if(valueX==""||valueY==""){
+                        alert("Please enter the data");
+                    } else {
+<!--                        window.location.href = "/inputdata/" + valueX + "/" + valueY;-->
+                        
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                window.location.href = "/prediction";
+                           }
+                        };
+                        
+                        xhttp.open("POST", "/inputdata", true);
+                        xhttp.setRequestHeader("Content-type", "application/json");
+                        
+                        var object = { xColumn: valueX, yColumn: valueY };
+                        var jsonObject = JSON.stringify(object);
+                        xhttp.send(jsonObject)
+                        
+                    }
+                    
+                }
+            </Script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="/styles/app.css">
+    </head>
+    
+    <body class="bg-dark">
+        <div class="container-fluid bg-dark text-white">
+        <br>
+        
+        <h1 class="card-title text-light" align="center"><FONT FACE="ARIAL">
+        Linear Regressor
+        </font></H1>
+        <H3 class="card-subtitle text-secondary" align="center"><FONT FACE="ARIAL">
+        - calculate Arbitrarily anything -
+        </font></H3>
+        
+        <BR><BR>
+        
+        <div class="card bg-light text-dark mb-3 ml-5 mr-5" ALIGN="CENTER">
+        <div class="card-body" align="center">
+        <h3 ALIGN="CENTER" class="card-title" > <FONT FACE="ARIAL">
+            Use our regression algorithm to obtain a machine learning model that uses linear regression to predict values based on a table of data.
+            
+        </font>
+        </h3>
+        </div> </div>
+        
+        <BR>
+        
+        <div class="card bg-light text-dark mb-3 ml-4 mr-4">
+            <div class="card-body">
+        <H3 class="card-title" ALIGN="CENTER"><FONT FACE="ARIAL">
+            Input the Dataset
+        </font>
+        </h3>
+        
+        <h3 class="card-subtitle" ALIGN="CENTER" style="line-height:1.5"><FONT FACE="ARIAL">
+            Please provide the first data column (x) in the left textbox and the second data column (y) in the right textbox below.
+            Ensure each column has atleast 20 data points for optimal results. More data usually means better results, but don't push it by going for like 10,000.
+            The data should be formatted as CSV(comma separated values). E.g: 100, 200, 500, 634.
+        </font>
+        </h3>
+        
+        </div></div>
+        
+        <br>
+        <form name="f1" id="name-form">
+            <div class="input-group">
+                <input type="text" placeholder="x_values" class="form-control bg-dark text-light text-center ml-3 mb-3" width="500" name="t1" id="text1">
+                    
+                <input type="text" placeholder="y_values" class="form-control text-center bg-dark text-light mr-3 mb-3" width="500" name="t2" id="text2">
+                
+            </div>
+            
+            <br>
+            <h2 ALIGN="CENTER">
+                <input type="button" class="btn btn-outline-info btn-lg btn-block container-fluid" style="max-width:11rem;" name="s1" value="Train" onclick="train_model()">
+            </h2>
+        </form>
+    
+    <br>
+    <p class="text-secondary"align="CENTER" style="line-height:1.4"><FONT FACE="ARIAL">
+    by:
+    <br>
+    md_sahil_ak and jeet_singh
+    </font></p>
+    
+    <br>
+    </div>
+    </body>
+</html>

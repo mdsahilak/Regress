@@ -78,9 +78,9 @@
         <br>
         <form name="f1" id="name-form">
             <div class="input-group">
-                <input type="text" placeholder="x_values" class="form-control bg-dark text-light text-center ml-3 mb-3" width="500" name="t1" id="text1">
+                <input type="text" placeholder="x_values" class="form-control bg-dark text-light text-center ml-5 mb-3" width="500" name="t1" id="text1">
                     
-                <input type="text" placeholder="y_values" class="form-control text-center bg-dark text-light mr-3 mb-3" width="500" name="t2" id="text2">
+                <input type="text" placeholder="y_values" class="form-control text-center bg-dark text-light mr-5 mb-3" width="500" name="t2" id="text2">
                 
             </div>
             

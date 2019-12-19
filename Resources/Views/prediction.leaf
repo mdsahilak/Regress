@@ -42,51 +42,96 @@
             }
             
         </script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles/app.css">
+            
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     
-    <body bgcolor="Black" text="white" align="center">
-        <FONT FACE="ARIAL">
-        <marquee>Jeet, bro please learn ajax!</marquee>
-        <HR WIDTH="95%" height="3" COLOR="RED">
-        <h1>
-            Model Metadata
-        </h1>
-        <h3>
-            #if(trainingRun == "success"){
-                Your Regressor Model has been trained
-            } else {
-                !Training Epoch aborted due to IO_Error. Please Inspect the input data!
-            }
-            <br>
-            view its summarised debug description below:
-            <br><br>
-            Errors: #(error)
-            <br><br>
-            The Regressor: #(regressor)
-            <br><br>
-            The Constants derived: #(constants)
-            <br><br>
-            The Regression Equations used: #(formulas)
-        </h3>
+    <body class="bg-dark" align="center">
         
-        <br>
-        <HR WIDTH="95%" height="3" COLOR="RED">
-        <br>
-        <h1>
+        <h1 class="text-white mt-3" align="center">
             Prediction Interface
         </h1>
-        <h3> Input the value you would like to predict: </h3>
+        <h3 class="text-secondary" align="center"> - Input the value you would like to predict - </h3>
+        
+        <br>
+        
+        <div class="container-fluid bg-dark text-white">
+        <FONT FACE="ARIAL">
+<!--        <marquee>Jeet, bro please learn ajax ! Sujit, bro please get a laptop </marquee>-->
+
+           <div class="card bg-light text-dark mb-3 ml-5 mr-5 mx-auto" style="max-width:33rem;" ALIGN="CENTER">
+           <div class="card-body" align="center">
+               
+           <p align="center">
+               <input type="text" class="form-control bg-dark text-light text-center" width="500" name="t1" id="prediction-input">
+               <br>
+               <br>
+               <input type="button" class="btn btn-outline-danger btn-lg mr-2" name="b2" onclick="predict_Y()" value="Predict Y">
+               <input type="button" class="btn btn-outline-primary btn-lg ml-2" name="b1" onclick="predict_X()" value="Predict X">
+           </p>
+               <h1 align="center" id="ans-space">
+                   None.
+               </h1>
+        </Font>
+        </div></div>
+        
+        <br>
+        
+        <div class="card bg-light text-dark mb-3 ml-5 mr-5" ALIGN="CENTER">
+            
+        <div class="card-body" align="center">
+        
+        <h1 Align="Center">
+            Model Metadata
+        </h1>
+            
+        <h3>
+            #if(trainingRun == "success"){
+            Your Regressor Model has been trained and is ready for predictions. <br><br>View the debug description for detailed infomation on the model. <br>Use 'Retrain' to create a new model.
+            } else {
+            Training aborted due to IO_Error. Please Inspect the input data and view the debug description for detailed info.
+            }
+            <br>
+
+        </h3>
+        
         <p align="center">
-            <input type="text" width="500" name="t1" id="prediction-input">
-            <br>
-            <br>
-            <input type="button" name="b2" onclick="predict_Y()" value="Predict Y">
-            <input type="button" name="b1" onclick="predict_X()" value="Predict X">
+        <button class="btn btn-lg btn-dark mt-3" type="button" data-toggle="collapse" data-target="#debugView" aria-expanded="false" aria-controls="collapseExample">
+            Toggle Debug View
+        </button>
         </p>
-            <h1 align="center" id="ans-space">
-                None.
-            </h1>
-        <input type="button" name="re-t" onclick="window.location.href='/';" value="Re-Train">
-     </Font>
+               
+        <div class="collapse" id="debugView">
+        <div class="card card-body text-secondary bg-dark">
+            <h5>
+                Errors: #(error)
+                <br><br>
+                The Regressor: #(regressor)
+                <br><br>
+                The Constants derived: #(constants)
+                <br><br>
+                The Regression Equations used: #(formulas)
+            </h5>
+        </div>
+        </div>
+        
+        </div></div>
+        
+        
+        <div class="text-center">
+        <input class="btn btn-outline-info btn-lg m-3"type="button" name="re-t" onclick="window.location.href='/';" value="Re-Train" align="center">
+        </div>
+        
+        
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
     </body>
 </html>

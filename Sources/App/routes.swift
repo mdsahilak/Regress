@@ -8,17 +8,6 @@ var error_text: String = "Model Training not yet initiated"
 
 // MARK: Register your application's routes here.
 public func routes(_ router: Router) throws {
-    // "It works" page
-    router.get("/welcome") { req in
-        return try req.view().render("welcome")
-    }
-    
-    // Says hello
-    router.get("hello", String.parameter) { req -> Future<View> in
-        return try req.view().render("hello", [
-            "name": req.parameters.next(String.self)
-        ])
-    }
     
     router.get { req -> Future<View> in
         return try req.view().render("index")

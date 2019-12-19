@@ -63,7 +63,7 @@
         <FONT FACE="ARIAL">
 <!--        <marquee>Jeet, bro please learn ajax ! Sujit, bro please get a laptop </marquee>-->
 
-           <div class="card bg-light text-dark mb-3 ml-5 mr-5 mx-auto" style="max-width:33rem;" ALIGN="CENTER">
+           <div class="card bg-light text-dark mb-3 mx-auto" style="max-width:33rem;" ALIGN="CENTER">
            <div class="card-body" align="center">
                
            <p align="center">
@@ -81,7 +81,7 @@
         
         <br>
         
-        <div class="card bg-light text-dark mb-3 ml-5 mr-5" ALIGN="CENTER">
+        <div class="card bg-light text-dark mb-3 mx-auto" style="max-width:83rem;" ALIGN="CENTER">
             
         <div class="card-body" align="center">
         

@@ -1,3 +1,12 @@
+# Hosted Simple Linear Regression
+
+## Use a regression algorithm to obtain a model that uses linear regression to predict values based on a table of data.
+
+### Visit at: [Regrex](https://regrex.vapor.cloud/)
+
+---
+Built with the Vapor3 Web Framework:
+
 <p align="center">
     <img src="https://user-images.githubusercontent.com/1342803/43869499-ce6ce122-9b40-11e8-8894-e0c48eabf270.png" width="320" alt="Web Template">
     <br>
